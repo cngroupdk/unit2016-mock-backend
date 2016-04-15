@@ -1,0 +1,35 @@
+{
+  "name": "unit2016-mock-backend",
+  "version": "1.0.0",
+  "description": "Mock backend for unIT 2016 student contest",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/**/*.js"
+  },
+  "engines": {
+    "node": ">=4.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cngroupdk/unit2016-mock-backend.git"
+  },
+  "keywords": [
+    "unIT",
+    "2016",
+    "CN Group CZ"
+  ],
+  "author": "CN Group CZ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cngroupdk/unit2016-mock-backend/issues"
+  },
+  "homepage": "https://github.com/cngroupdk/unit2016-mock-backend#readme",
+  "dependencies": {
+    "express": "~4.13.4"
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "mocha": "~2.4.5",
+    "sinon": "~1.17.3"
+  }
+}
