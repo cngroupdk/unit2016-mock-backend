@@ -4,7 +4,8 @@
   "description": "Mock backend for unIT 2016 student contest",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/**/*.js"
+    "unit": "mocha tests/**/*.js",
+    "unit:watch": "mocha --watch tests/**/*.js"
   },
   "engines": {
     "node": ">=4.4.0"
@@ -25,7 +26,8 @@
   },
   "homepage": "https://github.com/cngroupdk/unit2016-mock-backend#readme",
   "dependencies": {
-    "express": "~4.13.4"
+    "express": "~4.13.4",
+    "mori": "~0.3.2"
   },
   "devDependencies": {
     "chai": "~3.5.0",
