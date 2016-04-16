@@ -4,6 +4,7 @@
   "description": "Mock backend for unIT 2016 student contest",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "unit": "mocha tests/**/*.js",
     "unit:watch": "mocha --watch tests/**/*.js"
   },
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/cngroupdk/unit2016-mock-backend#readme",
   "dependencies": {
+    "body-parser": "~1.15.0",
     "express": "~4.13.4",
     "guid": "0.0.12",
     "mori": "~0.3.2"

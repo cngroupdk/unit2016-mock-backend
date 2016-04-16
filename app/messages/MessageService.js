@@ -5,6 +5,7 @@ const guid = require('guid')
 const messageStore = require('./MessageStore.js')
 
 function create(message) {
+  message.timestamp = new Date()
   if (!message.guid) {
     message.guid = guid.raw()
   }
