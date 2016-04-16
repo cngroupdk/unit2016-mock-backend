@@ -31,7 +31,7 @@ describe('MessageStore', () => {
       messages = messageStore.addMessage(message)
     })
 
-    it('increases size', () => {
+    it('increases size of message list', () => {
       expect(
         mori.count(messages)
       ).to.be.equal(

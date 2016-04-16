@@ -1,8 +1,22 @@
 [
   {
-    "guid": "ABCD-1234"
+    "guid": "ABCD-1234",
+    "authorEmail": "john@doe.com",
+    "text": "Hello world"
   },
   {
-    "guid": "DEFG-1234"
+    "guid": "DEFG-1234",
+    "authorEmail": "jane@doe.com",
+    "text": "Hello new shoes"
+  },
+  {
+    "guid": "IHFG-5784",
+    "authorEmail": "jane@doe.com",
+    "text": "Hello new dress"
+  },
+  {
+    "guid": "DGJU-2446",
+    "authorEmail": "jane@doe.com",
+    "text": "Hello new jeans"
   }
 ]
