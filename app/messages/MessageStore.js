@@ -4,19 +4,20 @@ const mori = require('mori')
 const path = require('path')
 
 const initialData = require(path.resolve(__dirname, '..', '..', 'data', 'messages.json'))
-let messages = mori.list()
+let messageList = mori.list()
 
 function getMessages() {
-  return messages
+  return mori.flatten(messageList)
 }
 
 function addMessage(message) {
-  messages = mori.conj(messages, message)
+  messageList = mori.conj(messageList, message)
+  return messageList
 }
 
 // init
 (() => {
-  messages = mori.into(messages, initialData)
+  messageList = mori.into(messageList, initialData)
 })()
 
 module.exports = {

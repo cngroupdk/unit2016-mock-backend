@@ -15,7 +15,7 @@ describe('MessageStore', () => {
 
   it('contains inital data', () => {
     const messages = messageStore.getMessages()
-    expect(mori.count(messages)).to.be.equal(2)
+    expect(mori.count(messages)).to.be.at.least(2)
   })
 
   describe('adds new message', () => {
@@ -23,15 +23,20 @@ describe('MessageStore', () => {
     const message = {
       guid: 'XYZW-9876'
     }
+    let originalMessages
     let messages = undefined
 
     beforeEach(() => {
-      messageStore.addMessage(message)
-      messages = messageStore.getMessages()
+      originalMessages = messageStore.getMessages()
+      messages = messageStore.addMessage(message)
     })
 
     it('increases size', () => {
-      expect(mori.count(messages)).to.be.equal(3)
+      expect(
+        mori.count(messages)
+      ).to.be.equal(
+        1 + mori.count(originalMessages)
+      )
     })
 
     it('contains the new message', () => {

@@ -27,6 +27,7 @@
   "homepage": "https://github.com/cngroupdk/unit2016-mock-backend#readme",
   "dependencies": {
     "express": "~4.13.4",
+    "guid": "0.0.12",
     "mori": "~0.3.2"
   },
   "devDependencies": {
