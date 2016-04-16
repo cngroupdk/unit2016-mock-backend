@@ -47,6 +47,7 @@ describe('MessageService', () => {
     it('fills in missing GUID', () => {
       const newMessage = mori.first(messages)
       expect(newMessage.guid).to.be.equal('ABCD-1234')
+      expect(newMessage.timestamp).to.be.defined
     })
 
   })
@@ -69,6 +70,7 @@ describe('MessageService', () => {
     it('keeps pre-filled GUID', () => {
       const newMessage = mori.first(messages)
       expect(newMessage.guid).to.be.equal('XYZW-9876')
+      expect(newMessage.timestamp).to.be.defined
     })
 
   })
