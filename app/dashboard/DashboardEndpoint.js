@@ -27,17 +27,15 @@ function _get(req, res) {
   )
 
   const dayEnd = _getDayEnd(dayStart)
-  const weekEnd = _getWeekEnd(dayStart)
-
-  console.log(weekEnd)
+  const weekStart = _getWeekStart(dayEnd)
 
   const dayStats = dashboardService.stats(
     dayStart,
     dayEnd
   )
   const weekStats = dashboardService.stats(
-    dayStart,
-    weekEnd
+    weekStart,
+    dayEnd
   )
 
   apiResponse.http200(req, res,
@@ -50,12 +48,12 @@ function _get(req, res) {
 
 function _getDayEnd(date) {
   const dateMilis = date.getTime()
-  return new Date(dateMilis + dayShiftMilis) //
+  return new Date(dateMilis + dayShiftMilis)
 }
 
-function _getWeekEnd(date) {
+function _getWeekStart(date) {
   const dateMilis = date.getTime()
-  return new Date(dateMilis + weekShiftMilis) //
+  return new Date(dateMilis - weekShiftMilis)
 }
 
 module.exports = {
