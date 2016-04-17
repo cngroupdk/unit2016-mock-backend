@@ -18,6 +18,7 @@ describe('MessageStore', () => {
     expect(mori.count(messages)).to.be.at.least(2)
   })
 
+
   describe('adds new message', () => {
 
     const message = {
@@ -41,6 +42,37 @@ describe('MessageStore', () => {
 
     it('contains the new message', () => {
       expect(mori.find(messages, message)).to.be.truthy
+    })
+
+  })
+
+
+  describe('finds message', () => {
+
+    let message
+
+    beforeEach(() => {
+      message = messageStore.findByGuid('ABCD-1234')
+    })
+
+    it('by GUID', () => {
+      expect(message).to.be.defined
+      expect(message.guid).to.be.equal('ABCD-1234')
+    })
+
+  })
+
+
+  describe('does not find message', () => {
+
+    let message
+
+    beforeEach(() => {
+      message = messageStore.findByGuid('really-not-existing-guid')
+    })
+
+    it('by GUID', () => {
+      expect(message).not.to.be.defined
     })
 
   })
