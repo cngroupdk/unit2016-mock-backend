@@ -44,6 +44,13 @@ describe('MessageService', () => {
       guid.raw.restore()
     })
 
+    it('adds all necessary attributes', () => {
+      const newMessage = mori.first(messages)
+      expect(newMessage.timestamp).to.be.a.date
+      expect(newMessage.guid).to.be.a.string
+      expect(newMessage.votes).to.be.an.array
+    })
+
     it('fills in missing GUID', () => {
       const newMessage = mori.first(messages)
       expect(newMessage.guid).to.be.equal('ABCD-1234')

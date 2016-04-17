@@ -9,6 +9,8 @@ function create(message) {
   if (!message.guid) {
     message.guid = guid.raw()
   }
+  message.votes = []
+  
   return messageStore.addMessage(message)
 }
 
