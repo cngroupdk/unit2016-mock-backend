@@ -61,12 +61,10 @@ function _countVotes(messages) {
   mori.each(
     messages,
     (messageData) => {
-      messageData.votes.forEach((authorEmail) => {
-        if (!votes[authorEmail]) {
-          votes[authorEmail] = 0
-        }
-        votes[authorEmail] += 1
-      })
+      if (!votes[messageData.authorEmail]) {
+        votes[messageData.authorEmail] = 0
+      }
+      votes[messageData.authorEmail] += messageData.votes.length
     }
   )
 

@@ -50,7 +50,7 @@
   {
     "guid": "MOND-0003",
     "timestamp": "2016-04-12T11:01:50.112Z",
-    "authorEmail": "john@doe.com",
+    "authorEmail": "jane@doe.com",
     "text": "Monday message #3 with 1 vote",
     "votes": [
       "jim@beam.com"

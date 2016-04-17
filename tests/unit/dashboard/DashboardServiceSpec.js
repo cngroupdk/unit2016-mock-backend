@@ -36,7 +36,7 @@ describe('DashboardService', () => {
     })
 
   })
-  
+
 
   describe('top 10 messages for 1 week', () => {
 
@@ -80,8 +80,8 @@ describe('DashboardService', () => {
 
     it ('counts most "a\'med" per day at top', () => {
       const topAuthor = mori.first(topTenAuthors)
-      expect(topAuthor.authorEmail).to.be.equal('jim@beam.com')
-      expect(topAuthor.votes).to.have.length.equal(7)
+      expect(topAuthor.authorEmail).to.be.equal('jane@doe.com')
+      expect(topAuthor.votes).to.have.length.equal(9)
     })
 
   })
@@ -105,8 +105,8 @@ describe('DashboardService', () => {
 
     it ('counts most "a\'med" per day at top', () => {
       const topAuthor = mori.first(topTenAuthors)
-      expect(topAuthor.authorEmail).to.be.equal('jim@beam.com')
-      expect(topAuthor.votes).to.have.length.equal(8)
+      expect(topAuthor.authorEmail).to.be.equal('jessie@doe.com')
+      expect(topAuthor.votes).to.have.length.equal(16)
     })
 
   })
