@@ -7,6 +7,10 @@ const messageStore = require(path.resolve(__dirname, '..', 'messages', 'messageS
 function addVote(vote) {
   const message = messageStore.findByGuid(vote.messageGuid)
 
+  if (!message) {
+    return null
+  }
+
   if (!message.votes) {
     message.votes = []
   }

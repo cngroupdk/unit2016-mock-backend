@@ -33,7 +33,7 @@ function _post(req, res) {
     return
   }
 
-  let message = {
+  const message = {
     authorEmail: authorEmail,
     text: text
   }
