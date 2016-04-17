@@ -1,24 +1,24 @@
 'use strict'
 
 const mori = require('mori')
+const path = require('path')
+
+const apiResponse = require(path.resolve(__dirname, '..', '_common', 'ApiResponse.js'))
 
 const messageService = require('./MessageService.js')
 
 const ENDPOINT = '/messages'
 
 function register(app) {
-  app.get(ENDPOINT, _get)
+  app.get(ENDPOINT, _list)
   app.post(ENDPOINT, _post)
-  app.put(ENDPOINT, _http405)
-  app.delete(ENDPOINT, _http405)
+  app.put(ENDPOINT, apiResponse.http405)
+  app.delete(ENDPOINT, apiResponse.http405)
 }
 
-function _get(req, res) {
+function _list(req, res) {
   const messages = mori.intoArray(messageService.get())
-  res
-    .type('application/json')
-    .status(200)
-    .send(messages)
+  apiResponse.http200(req, res, messages)
 }
 
 function _post(req, res) {
@@ -26,10 +26,7 @@ function _post(req, res) {
   const text = req.body.text
 
   if (!authorEmail || !text) {
-    res
-      .type('application/json')
-      .status(400)
-      .send()
+    apiResponse.http400(req, res)
     return
   }
 
@@ -40,14 +37,7 @@ function _post(req, res) {
 
   const messages = messageService.create(message)
 
-  res
-    .type('application/json')
-    .status(200)
-    .send(mori.first(messages))
-}
-
-function _http405(req, res) {
-  res.sendStatus(405)
+  apiResponse.http200(req, res, mori.first(messages))
 }
 
 module.exports = {

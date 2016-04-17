@@ -1,14 +1,18 @@
 'use strict'
 
+const path = require('path')
+
+const apiResponse = require(path.resolve(__dirname, '..', '_common', 'ApiResponse.js'))
+
 const ameService = require('./AmeService.js')
 
 const ENDPOINT = '/ame'
 
 function register(app) {
-  app.get(ENDPOINT, _http405)
+  app.get(ENDPOINT, apiResponse.http405)
   app.post(ENDPOINT, _post)
-  app.put(ENDPOINT, _http405)
-  app.delete(ENDPOINT, _http405)
+  app.put(ENDPOINT, apiResponse.http405)
+  app.delete(ENDPOINT, apiResponse.http405)
 }
 
 function _post(req, res) {
@@ -16,7 +20,7 @@ function _post(req, res) {
   const messageGuid = req.body.messageGuid
 
   if (!authorEmail || !messageGuid) {
-    _http400(req, res)
+    apiResponse.http400(req, res)
     return
   }
 
@@ -27,28 +31,11 @@ function _post(req, res) {
 
   const message = ameService.addVote(vote)
   if (!message) {
-    _http400(req, res)
+    apiResponse.http400(req, res)
     return
   }
 
-  res
-    .type('application/json')
-    .status(200)
-    .send(message)
-}
-
-function _http405(req, res) {
-  res
-    .type('application/json')
-    .sendStatus(405)
-    .send()
-}
-
-function _http400(req, res) {
-  res
-  .type('application/json')
-  .status(400)
-  .send()
+  apiResponse.http200(req, res, message)
 }
 
 module.exports = {
