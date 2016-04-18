@@ -2,7 +2,7 @@
 
 const path = require('path')
 
-const messageStore = require(path.resolve(__dirname, '..', 'messages', 'messageStore.js'))
+const messageStore = require(path.resolve(__dirname, '..', 'messages', 'MessageStore.js'))
 
 function addVote(vote) {
   const message = messageStore.findByGuid(vote.messageGuid)
