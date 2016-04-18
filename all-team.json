@@ -1,0 +1,92 @@
+{
+  "apps" : [
+    {
+      "name"      : "01_napul_cesi",
+      "cwd"       : "./",
+      "script"    : "index.js",
+      "watch"     : false,
+      "instances" : 1,
+      "exec_mode"  : "fork",
+      "env": {
+        "PORT": "9001",
+      }
+    },
+    {
+      "name"      : "02_umpalumpove",
+      "cwd"       : "./",
+      "script"    : "index.js",
+      "watch"     : false,
+      "instances" : 1,
+      "exec_mode"  : "fork",
+      "env": {
+        "PORT": "9002",
+      }
+    },
+    {
+      "name"      : "03_d_mol",
+      "cwd"       : "./",
+      "script"    : "index.js",
+      "watch"     : false,
+      "instances" : 1,
+      "exec_mode"  : "fork",
+      "env": {
+        "PORT": "9003",
+      }
+    },
+    {
+      "name"      : "04_profit_2_0",
+      "cwd"       : "./",
+      "script"    : "index.js",
+      "watch"     : false,
+      "instances" : 1,
+      "exec_mode"  : "fork",
+      "env": {
+        "PORT": "9004",
+      }
+    },
+    {
+      "name"      : "05_salem_alem",
+      "cwd"       : "./",
+      "script"    : "index.js",
+      "watch"     : false,
+      "instances" : 1,
+      "exec_mode"  : "fork",
+      "env": {
+        "PORT": "9005",
+      }
+    },
+    {
+      "name"      : "06_pekari",
+      "cwd"       : "./",
+      "script"    : "index.js",
+      "watch"     : false,
+      "instances" : 1,
+      "exec_mode"  : "fork",
+      "env": {
+        "PORT": "9006",
+      }
+    },
+    {
+      "name"      : "07_swag_house",
+      "cwd"       : "./",
+      "script"    : "index.js",
+      "watch"     : false,
+      "instances" : 1,
+      "exec_mode"  : "fork",
+      "env": {
+        "PORT": "9007",
+      }
+    },
+    {
+      "name"      : "08_asi",
+      "cwd"       : "./",
+      "script"    : "index.js",
+      "watch"     : false,
+      "instances" : 1,
+      "exec_mode"  : "fork",
+      "env": {
+        "PORT": "9008",
+      }
+    }
+  ]
+}
