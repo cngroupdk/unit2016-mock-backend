@@ -16,8 +16,8 @@ describe('DashboardService', () => {
 
   describe('top 10 messages for 1 day', () => {
 
-    const start = new Date('2016-04-12T00:00:00.000Z')
-    const end = new Date('2016-04-12T23:59:59.999Z')
+    const start = new Date('2016-04-18T00:00:00.000Z')
+    const end = new Date('2016-04-18T23:59:59.999Z')
 
     let topTenMessages
 
@@ -30,7 +30,7 @@ describe('DashboardService', () => {
       expect(topTenMessages).to.have.length.most(10)
     })
 
-    it ('counts most "a\'med" per day at top', () => {
+    it('counts most "a\'med" per day at top', () => {
       const topMessage = mori.first(topTenMessages)
       expect(topMessage.votes).to.have.length(4)
     })
@@ -64,8 +64,8 @@ describe('DashboardService', () => {
 
   describe('top 10 authors for 1 day', () => {
 
-    const start = new Date('2016-04-12T00:00:00.000Z')
-    const end = new Date('2016-04-12T23:59:59.999Z')
+    const start = new Date('2016-04-18T00:00:00.000Z')
+    const end = new Date('2016-04-18T23:59:59.999Z')
 
     let topTenAuthors
 
@@ -78,7 +78,7 @@ describe('DashboardService', () => {
       expect(topTenAuthors).to.have.length.most(10)
     })
 
-    it ('counts most "a\'med" per day at top', () => {
+    it('counts most "a\'med" per day at top', () => {
       const topAuthor = mori.first(topTenAuthors)
       expect(topAuthor.authorEmail).to.be.equal('jane@doe.com')
       expect(topAuthor.votes).to.have.length.equal(9)
